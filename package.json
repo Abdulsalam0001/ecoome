@@ -1,62 +1,21 @@
 {
-  "name": "commerce",
-  "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "site",
-    "packages/*"
-  ],
+  "name": "resuc-recovery",
+  "version": "1.0.0",
+  "description": "framework for resuc",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "prettier-fix": "prettier --write ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "turbo": {
-    "baseBranch": "origin/main",
-    "pipeline": {
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          "dist/**"
-        ]
-      },
-      "next-commerce#build": {
-        "dependsOn": [
-          "^build",
-          "$COMMERCE_PROVIDER"
-        ],
-        "outputs": [
-          ".next/**"
-        ]
-      },
-      "test": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": []
-      },
-      "lint": {
-        "outputs": []
-      },
-      "prettier-fix": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      },
-      "start": {
-        "cache": false
-      }
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdulsalam0001/nft.git"
   },
-  "devDependencies": {
-    "husky": "^7.0.4",
-    "prettier": "^2.5.1",
-    "turbo": "^1.0.28"
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/Abdulsalam0001/nft/issues"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "turbo run lint"
-    }
-  }
+  "homepage": "https://github.com/Abdulsalam0001/nft#readme"
 }
