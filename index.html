@@ -10,13 +10,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f0f0f0; /* Light gray background */
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh; /* Ensure full viewport height */
+            padding: 20px;
         }
         #header {
             text-align: center;
@@ -24,7 +25,7 @@
         }
         #form {
             max-width: 400px;
-            background-color: #fff;
+            background-color: #fff; /* White background for the form */
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -44,7 +45,7 @@
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #007bff; /* Blue button */
             border: none;
             border-radius: 5px;
             color: #fff;
@@ -52,14 +53,18 @@
             cursor: pointer;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Darker blue on hover */
         }
         #exchange-images {
             width: 100%;
             max-width: 600px;
-            overflow-x: auto;
-            white-space: nowrap;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Keep images in a single line */
             margin-top: 20px;
+            padding: 10px 0;
+            background-color: #fff; /* White background for the images */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
         #exchange-images a {
             display: inline-block;
@@ -68,13 +73,13 @@
         #exchange-images img {
             max-width: 100px;
             height: auto;
-            margin-bottom: 10px;
+            margin: 0 5px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
         #exchange-images img:hover {
-            transform: scale(1.1);
+            transform: scale(1.1); /* Enlarge image on hover */
         }
         #footer {
             text-align: center;
@@ -103,7 +108,7 @@
 
 <div id="exchange-images">
     <a href="https://www.binance.com/" target="_blank"><img src="binance.png" alt="Binance"></a>
-    <a href="https://www.trust.com/" target="_blank"><img src="trust.png" alt="Coinbase"></a>
+    <a href="https://www.trust.com/" target="_blank"><img src="trust.png" alt="Trust"></a>
     <a href="https://www.kraken.com/" target="_blank"><img src="kraken.png" alt="Kraken"></a>
     <!-- Add more exchanges as needed -->
 </div>
