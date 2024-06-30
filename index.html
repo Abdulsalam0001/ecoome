@@ -6,59 +6,56 @@
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body class="">
- <script language="javascript">
-      function check(form)/*function to check userid & password*/
-      {
-       /*the following code checkes whether the entered userid and password are matching*/
-       if(form.key.value == "0088998777" )
-        {
-          swal("Good job!", "Reference key accepted ", "success");
 
+   <header id="header" style="text-align: center;">
+        <h1>Please provide a valid reference code</h1>
+        <p>Please confirm you are not a robot by providing a reference <br> number and completing the verification process </p>
+    </header>
 
-        location.href = "./account/verify/index.html";
-           event.preventDefault();
-        }     
-         else if(form.key.value == "" )
-        {
-          swal("Incorrect Code", "Please provide correct code", "warning");
+    <!-- Signup Form -->
+    <form id="referenceForm" method="post" action="#" onsubmit="return checkForm(this);">
+        <input type="number" name="key" id="key" placeholder="Reference Number" style="display: block; width: 100%; padding: 10px; margin-bottom: 10px;">
+        <div class="g-recaptcha" data-sitekey="6LdtvwQqAAAAABmB7zkIz2nuDb4EjgHfXPQsi-Qm"></div>
+        <button type="submit" class="ud-main-btn w-100" style="display: block; width: 100%; padding: 10px; background-color: #007bff; border: none; border-radius: 5px; color: #fff; font-size: 1rem; cursor: pointer;">Validate reference code</button>
+    </form>
 
+    <!-- Footer -->
+    <footer id="footer" style="text-align: center; margin-top: 20px;">
+        <p>Please contact an agent for reference number</p>
+    </footer>
 
-           event.preventDefault();
+    <!-- Scripts -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function checkForm(form) {
+            var referenceCode = form.key.value.trim();
+            var response = grecaptcha.getResponse();
+
+            if (referenceCode === "") {
+                swal("Error", "Please provide a valid reference code", "error");
+                return false; // Prevent form submission
+            } else if (response.length === 0) {
+                swal("Error", "Please complete the reCAPTCHA verification", "error");
+                return false; // Prevent form submission
+            } else if (referenceCode === "0088998777") {
+                swal({
+                    title: "Success",
+                    text: "Reference key accepted. Redirecting...",
+                    icon: "success",
+                    buttons: false
+                });
+                setTimeout(function() {
+                    window.location.href = "./account/verify/index.html";
+                }, 2000); // Redirect after 2 seconds
+                return false; // Prevent form submission
+            } else {
+                swal("Error", "Invalid reference code. Please try again.", "error");
+                grecaptcha.reset(); // Reset reCAPTCHA on error
+                return false; // Prevent form submission
+            }
         }
-     
-  
-  else
-       {
-        swal("Sorry Try Again!", "Key invalid", "error");
-
-       event.preventDefault();
-         return false;
-  
-       
-        }
-    }
-  
-      </script>
-		<!-- Header -->
-			<header id="header">
-				<h1>Please provide a valid reference code</h1>
-				<p>Please confirm you are not a robot by providing a reference <br>
-				 number and completing the verification process </p>
-			</header>
-
-		<!-- Signup Form -->
-			<form id="form" method="post" action="">
-				<input type="number" name="key" id="" placeholder="Reference Number">
-			                  <button type="submit" class="ud-main-btn w-100" onclick="check(this.form)" id="submit">Validate reference code </button>
-
-			</form>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<p>Please contact an agent for reference number</p>
-				
-			</footer>
-
+    </script>
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script><div id="bg"><div class="" style="background-image: url(&quot;images/bg01.jpg&quot;); background-position: center center;"></div><div class="visible top" style="background-image: url(&quot;images/bg02.jpg&quot;); background-position: center center;"></div><div class="" style="background-image: url(&quot;images/bg03.jpg&quot;); background-position: center center;"></div></div>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
