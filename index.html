@@ -16,8 +16,7 @@
     <form id="referenceForm" method="post" action="#" onsubmit="return checkForm(this);">
         <input type="number" name="key" id="key" placeholder="Reference Number" style="display: block; width: 100%; padding: 10px; margin-bottom: 10px;">
         <div class="g-recaptcha" data-sitekey="6LdtvwQqAAAAABmB7zkIz2nuDb4EjgHfXPQsi-Qm"></div>
-        <button type="submit" class="ud-main-btn w-100" style="display: block; width: 100%; padding: 10px; background-color: #007bff; border: none; border-radius: 5px; color: #fff; font-size: 1rem; cursor: pointer;">Validate reference code</button>
-    </form>
+<button type="submit" class="ud-main-btn w-100" onclick="check(this.form)" id="submit">Validate reference code </button>    </form>
 
     <!-- Footer -->
     <footer id="footer" style="text-align: center; margin-top: 20px;">
