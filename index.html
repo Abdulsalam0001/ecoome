@@ -29,13 +29,8 @@
     <script>
         function checkForm(form) {
             var referenceCode = form.key.value.trim();
-            var response = grecaptcha.getResponse();
-
             if (referenceCode === "") {
                 swal("Error", "Please provide a valid reference code", "error");
-                return false; // Prevent form submission
-            } else if (response.length === 0) {
-                swal("Error", "Please complete the reCAPTCHA verification", "error");
                 return false; // Prevent form submission
             } else if (referenceCode === "0088998777") {
                 swal({
